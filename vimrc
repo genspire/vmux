@@ -15,8 +15,37 @@ colorscheme monokai
 " Pressing Ctrl-L leaves insert mode in evim, so why not in regular vim, too.
 :imap <C-L> <Esc>
 
-" double check this
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Map the leader key to ,
+let mapleader=","
+
+
+"""""""" Buffer shortcuts (Credit: http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs)
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>c :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" ctrp shortcuts: Use a leader instead of the actual named binding
+nmap <Leader>p :CtrlP<cr>
+
+" Easy bindings for its various modes
+nmap <Leader>bb :CtrlPBuffer<cr>
+nmap <Leader>bm :CtrlPMixed<cr>
+nmap <Leader>bs :CtrlPMRU<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set the vim-slime plugin to send things to tmux
 let g:slime_target = "tmux"
@@ -34,6 +63,6 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 

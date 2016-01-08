@@ -10,6 +10,7 @@ execute pathogen#infect()
 :set t_Co=256
 
 syntax enable
+set background=dark
 colorscheme monokai
 
 " Pressing Ctrl-L leaves insert mode in evim, so why not in regular vim, too.
@@ -31,12 +32,6 @@ nmap <leader>l :bnext<CR>
 " Move to the previous buffer
 nmap <leader>h :bprevious<CR>
 
-" Setup some default ignores
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
-
 " ctrp shortcuts: Use a leader instead of the actual named binding
 nmap <Leader>p :CtrlP<cr>
 
@@ -55,6 +50,24 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 
 " If you use airline plugin: Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
+"let g:airline_theme='badwolf'
+
+" ctrlp plugin setting that controls the root directory that searches start
+" from (see documentation)
+let g:ctrp_working_path_mode='wrc'
+
+" ctrlp setting to add pom files as markers
+let g:ctrlp_root_markers = ['pom.xml']
+
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" ctrlp: ignore files in .gitignore  
+" (this shows error if pwd is not a git repo so uncomment it as needed)
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " for syntastic
 set statusline+=%#warningmsg#

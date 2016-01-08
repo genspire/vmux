@@ -52,6 +52,9 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme='badwolf'
 
+" show airline status always
+set laststatus=2
+
 " ctrlp plugin setting that controls the root directory that searches start
 " from (see documentation)
 let g:ctrp_working_path_mode='wrc'

@@ -82,3 +82,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" turn on nerd tree with f
+nmap <leader>f :NERDTree<cr>
+
+" Turn on spell check
+nmap <leader>s :setlocal spell! spelllang=en_us<cr>

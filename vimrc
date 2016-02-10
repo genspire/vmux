@@ -87,3 +87,6 @@ nmap <leader>f :NERDTree<cr>
 
 " Turn on spell check
 nmap <leader>s :setlocal spell! spelllang=en_us<cr>
+
+" Default called to diffsplit to be vertically split
+:set diffopt+=vertical

@@ -6,6 +6,7 @@
 if [[ "$(cat bashrc)" != "$(tail -n3 ~/.bashrc)" ]] ; then 
   cat bashrc >> ~/.bashrc
 fi
+mkdir -p ~/bin
 cp tm.sh ~/bin/tm
 chmod u+x ~/bin/tm
 cp tmux.conf ~/.tmux.conf
@@ -28,5 +29,5 @@ git clone git://github.com/jpalardy/vim-slime.git
 git clone https://github.com/sickill/vim-monokai.git
 git clone https://github.com/bling/vim-airline
 
-
+cp -r ~/.vim/bundle/vim-monokai/colors ~/.vim/
 

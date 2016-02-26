@@ -4,6 +4,12 @@ export PATH=$PATH:/usr/local/bin
 # abort if we're already inside a TMUX session
 [ "$TMUX" == "" ] || exit 0 
 
+# abort if this is a login shell
+shopt -q login_shell && exit 0
+
+# abort if tmux is not installed (done here so warnings are emmitted)
+hash tmux 2>/dev/null || { echo >&2 "tmux is required but it's not installed.  Aborting."; exit 1; }
+
 # startup a "default" session if none currently exists
 tmux has-session -t _default || tmux new-session -s _default -d
 

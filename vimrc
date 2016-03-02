@@ -47,6 +47,12 @@ nmap <Leader>bb :CtrlPBuffer<cr>
 nmap <Leader>bm :CtrlPMixed<cr>
 nmap <Leader>bs :CtrlPMRU<cr>
 
+" remap how we navigate around splits so we just hit ctr-j not ctr-w,ctr-j
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set the vim-slime plugin to send things to tmux

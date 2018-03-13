@@ -21,11 +21,14 @@ set background=dark
 colorscheme monokai
 
 " Pressing Ctrl-L leaves insert mode in evim, so why not in regular vim, too.
-:imap <C-L> <Esc>
+:imap jj <Esc>
 
 " Map the leader key to ,
 let mapleader=","
 
+" Like command line
+nmap <C-e> <Esc>A
+nmap <C-a> <Esc>I
 
 """""""" Buffer shortcuts (Credit: http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs)
 
@@ -34,7 +37,7 @@ let mapleader=","
 nmap <leader>c :enew<cr>
 
 " Move to the next buffer
-nmap <leader>l :bnext<CR>
+nmap <leader>n :bnext<CR>
 
 " Move to the previous buffer
 nmap <leader>h :bprevious<CR>
